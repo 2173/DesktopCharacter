@@ -11,32 +11,7 @@ using DesktopCharacter.Model.Repository;
 
 namespace DesktopCharacter.Model.Service.Slack
 {
-    public interface ISlackService
-    {
-        /// <summary>
-        /// 認証のためのURLを取得します。ユーザーはこのURLをブラウザで開き、認証を行います。
-        /// 10分間のみ認証が有効です。
-        /// 認証後はProcessAuthメソッドにコードを渡してSlackAuthInfoを取得してください。
-        /// </summary>
-        /// <returns>認証のためのurl</returns>
-        string AuthUrl();
-
-        /// <summary>
-        /// FetchAuthUrlで開いたページで認証した後に得られるコードから認証情報を取得します。
-        /// </summary>
-        /// <param name="code">認証コード</param>
-        /// <returns>認証情報</returns>
-        Task<SlackAuthInfo> ProcessAuth(string code);
-
-        /// <summary>
-        /// 認証情報を永続化します。
-        /// </summary>
-        /// <param name="info"></param>
-        /// <returns></returns>
-        void Save(SlackAuthInfo info);
-    }
-
-    public class SlackService : ISlackService, IInitializable, IDisposable
+    public class SlackService : IService<SlackAuthInfo>, IInitializable, IDisposable
     {
         private const string CLIENT_ID = "4009303066.63272279520";
         private const string CLIENT_SECRET = "d7e876a1670273602f6fdb55e1bf7dca";

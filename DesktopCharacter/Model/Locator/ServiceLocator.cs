@@ -9,6 +9,7 @@ using DesktopCharacter.Model.Service.TimeSignal;
 using DesktopCharacter.Model.Service.Twitter;
 using DesktopCharacter.Model.AI;
 using NLog;
+using DesktopCharacter.Model.Service;
 
 namespace DesktopCharacter.Model.Locator
 {
@@ -53,7 +54,7 @@ namespace DesktopCharacter.Model.Locator
                 );
             RegisterByApplicationScope<BlackBoard>(() => new BlackBoard());
             RegisterByPrototypeScope<SlackUserRepository>(() => new SlackUserRepository());
-            RegisterByConfigBaseScope<ISlackService>(() => new SlackService());
+            RegisterByConfigBaseScope<IService<SlackAuthInfo>>(() => new SlackService());
             logger.Info("=== End RegistFactories ===");
         }
 

@@ -16,6 +16,7 @@ using DesktopCharacter.View.Dialog;
 using DesktopCharacter.ViewModel.Dialog;
 using Livet.Commands;
 using Livet.Messaging;
+using DesktopCharacter.Model.Service;
 
 namespace DesktopCharacter.ViewModel.SettingTab
 {
@@ -120,7 +121,7 @@ namespace DesktopCharacter.ViewModel.SettingTab
             var code = uriParams["code"];
 
 
-            var slackService = ServiceLocator.Instance.GetInstance<ISlackService>();
+            var slackService = ServiceLocator.Instance.GetInstance<IService<SlackAuthInfo>>();
             //コードを使って認証
             var auth = slackService.ProcessAuth(code);
             //処理待ち

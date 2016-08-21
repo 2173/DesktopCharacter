@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using DesktopCharacter.Model.Locator;
 using DesktopCharacter.Model.Service.Slack;
 using DesktopCharacter.ViewModel.Dialog;
+using DesktopCharacter.Model.Service;
 
 namespace DesktopCharacter.View.Dialog
 {
@@ -33,7 +34,7 @@ namespace DesktopCharacter.View.Dialog
             base.OnContentRendered(e);
             var vm = DataContext as SlackSignInViewModel;
 
-            var slackService = ServiceLocator.Instance.GetInstance<ISlackService>();
+            var slackService = ServiceLocator.Instance.GetInstance<IService<SlackAuthInfo>>();
             Browser.Navigate(new Uri(slackService.AuthUrl()));
         }
 

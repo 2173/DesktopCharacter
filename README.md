@@ -86,7 +86,6 @@ Using these libraries
 * Purpose : To get PNG files
 * License : libpng lincense
 
-
 ### [Live2D](http://www.live2d.com/ja/)
 * Purpose : To load Live2D Models and draw a model
 * License : libpng lincense([Licenses/Live2D.txt](Licenses/Live2D.txt))
@@ -98,6 +97,10 @@ Using these libraries
 ### [Premake](https://github.com/premake/premake-core)
 * Purpose : Making the solution
 * License : BSD License([Licenses/BSD.txt](Licenses/BSD.txt))
+
+### [Math.NET Numerics](http://numerics.mathdotnet.com/)
+* Purpose : Math Library
+* License : MIT/X11 License([Licenses/Math.Net Numercis.txt](Licenses/Math.Net Numercis.txt))
 
 ## License
 This software is licensed under the MIT License.
